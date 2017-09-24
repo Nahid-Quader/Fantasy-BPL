@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<?php
+error_reporting(E_ALL ^ E_NOTICE);
+error_reporting(0);
+?>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>Fantasy BPL</title>
+
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<style>
+	.navbar{
+		margin-bottom: 0;
+		border-radius: 0;
+	}
+	.footer{
+		background-color: black;
+	}
+	.welcome{
+		background-color: 8dff33;
+	}
+	</style>
+
+</head>
+<body>
+	<nav class="navbar navbar-inverse">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">Fantasy BPL</a>
+				
+			</div><!-- /.navbar-header -->
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Rules <span class="sr-only">(current)</span></a></li>
+					<li><a href="#">Prize</a></li>
+					<li><a href="#">Stat</a></li>
+				</ul>
+				
+					
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container -->
+	</nav>
+
+	<div class="jumbotron text-center">
+		<div class="container">
+			<h1>Make Your Dream Team</h1>
+			<h4>powerder by BCB</h4>
+		</div>
+		
+	</div>
+
+	<!--login system -->
+	<hr>
+	<div class="container"><div class="col-md-12">
+		<form action="Signin.php" method="post">
+			<div class="form-group">
+
+				<label>Email Address</label>
+				<input type="text" placeholder="username" size="40" name="email"> 
+				<label>Password</label>
+				<input type="password"  placeholder="password"size="40" name="password"> 
+			</div>
+			<button type="submit" class="btn btn-default"> Log In</button>
+			<?php
+					session_start();
+					if (isset($_SESSION['check']))
+					{
+						echo $_SESSION['check'];
+						unset($_SESSION['check']);
+					}
+					if (isset($_SESSION['error']))
+					{
+						echo $_SESSION['error'];
+						unset($_SESSION['error']);
+					}
+			
+					if (isset($_SESSION['signup_error']))
+					{
+						echo $_SESSION['signup_error'];
+						unset($_SESSION['signup_error']);
+					}
+					if (isset($_SESSION['success']))
+					{
+						echo $_SESSION['success'];
+						unset($_SESSION['success']);
+					}
+					if (isset($_SESSION['duplicate_error']))
+					{
+						echo $_SESSION['duplicate_error'];
+						unset($_SESSION['duplicate_error']);
+					}
+					
+					?>
+		</form>
+	</div>
+ 
+&nbsp;
+	</hr>
+
+	<div >
+		<h1 class="page-header"><center>Welcome <small> to the fantasy !</center></small></h1>
+		<p class="lead"><center>Official page of Fantasy Game of Bangladesh Premier League</center></p>
+		
+	</div>
+
+	<hr>
+
+	   <!-- Sign Up-->
+    <div class="container">
+    	<div class="col-md-12">
+    		<div class="Sign Up" align="center"><h1 class="page-header">Sign Up Now! </h1>
+    		
+    			<form action="usersignup.php" method="post">
+	    			<div class="form-group">
+
+	    				<p><input type="text" placeholder="name"size="40" name="name"> 
+	    				<p><input type="Email" placeholder="email address"size="40" name="email"> 
+	    				<p><input type="password"  placeholder="password"size="40" name="password"> 
+						<p><input type="text" placeholder="team"size="40" name="tname"> 
+	    			</div>
+	    			<button type="submit" class="btn btn-default"> Sign Up</button>
+					
+    			</form>
+				
+    		</div>
+    	</div>
+    </div>		
+    &nbsp;
+    <hr>
+
+	<div class="container">
+		<div class="row">
+  			<div class="col-sm-6 col-md-6">
+    			<div class="thumbnail">
+      				<img src="img/list.jpg" alt="squad list">
+      				<div class="caption">
+	        			<h3>Pick Your Team</h3>
+	        			<p>Use your budget of £100m to pick a squad of 15 players from the BPL.</p>
+	        		
+	      			</div>
+	    		</div>
+	  		</div>
+
+  			<div class="col-sm-6 col-md-6">
+    			<div class="thumbnail">
+      				<img src="img/league.jpg" alt="league table">
+      				<div class="caption">
+	        			<h3>Create and Join Leagues</h3>
+	        			<p> Play against friends and family, colleagues or a web community in private leagues.</p>
+	        		
+	      			</div>
+	    		</div>
+	  		</div>
+		</div>
+		
+	</div>
+	<hr>
+	&nbsp;
+	<div class="container">
+		<div class="col-md-12" align="center"><h2>About Us</h2>
+			<p>Like Fantasy Premier League and Fantasy IPL, now for the first time in Bangladesh we are introducing Fantasy BPL. Sign up, Make your team and ENJOY!!</p></div>
+		</div>
+
+	</div>
+
+	<footer>
+
+		<div class="panel-footer">
+			<div class=container>
+				<div class="col-md-4"  style="list-style-type:none">
+					
+					<li class="active"<a href="#">Home</a></li>
+					<li><a href="#">Rules</a></li>
+					<li><a href="#">Prize</a></li>
+					<li><a href="#">Stat</a></li>
+
+				</div>
+				<div class="col-md-4">
+					<p>Contact Us </p>
+					<p>Email: ateeqzwindow@gmail.com</p>
+					<p>Address: 123,asdasd,Dhaka,Bangladesh</p>
+				</div>
+				<div class="col-md-4">
+					<p><a href="#">Social </p>
+					<p><a href="#">Facebook</p>
+					<p><a href="#">Twitter</p>
+				
+				</div>
+			</div>
+		</div>
+		</footer>
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="js/bootstrap.min.js"></script>
+		</body>
+		</html>
